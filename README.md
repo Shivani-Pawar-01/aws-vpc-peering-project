@@ -38,16 +38,16 @@ The implementation includes:
 
 ## 🏗 Architecture
 
-> Architecture diagram will be added here.
-
+                Internet
+                    │
+          ┌─────────┴─────────┐
+          │                   │
+      Internet Gateway    Internet Gateway
+          │                   │
+    Requester VPC        Accepter VPC
+      10.0.0.0/16        192.168.0.0/16
+          │                   │
+     Public Subnet      Public Subnet
+          │                   │
+      EC2 Instance  ◄────VPC Peering────► EC2 Instance
 ---
-
-## 📸 Screenshots
-
-Screenshots will be added here during the implementation.
-
----
-
-## ✅ Result
-
-Successfully established communication between EC2 instances deployed in different VPCs using AWS VPC Peering.
