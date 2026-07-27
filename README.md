@@ -51,3 +51,24 @@ The implementation includes:
           │                   │
       EC2 Instance  ◄────VPC Peering────► EC2 Instance
 ---
+
+
+## 📸 Screenshots
+
+Screenshots will be added here during the implementation.
+
+---
+
+## 🛠️ Implementation Steps
+
+### Step 1: Create the Requester VPC
+
+The first Virtual Private Cloud (VPC) was created as the **Requester VPC** with the required IPv4 CIDR block. This VPC initiates the VPC Peering request and serves as one side of the private network.
+
+![Requester VPC](Screenshot/01-requester-vpc.png)
+
+---
+
+## ✅ Result
+
+Successfully established communication between EC2 instances deployed in different VPCs using AWS VPC Peering.
