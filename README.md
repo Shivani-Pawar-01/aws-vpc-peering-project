@@ -89,7 +89,14 @@ Repeat these steps for accepter vpc public subnet as well with the cidr block 19
 
 ---
 
+---
 
+### Step 4: Enable Auto-Assign Public IP
+
+Enabled **Auto-assign Public IPv4 Address** for the public subnets in both VPCs. This ensures that any EC2 instance launched in these subnets automatically receives a public IP address, allowing secure internet access for administration and testing.
+
+![Enable Auto-Assign Public IP](Screenshot/04-enable-auto-assign-public-ip.png)
+![Enable Auto-Assign Public IP](Screenshot/05-enable-auto-assign-public-ip.png)
 
 ## ✅ Result
 
