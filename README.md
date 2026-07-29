@@ -69,7 +69,6 @@ Created the second Virtual Private Cloud (VPC) as the **Accepter VPC** with the 
 
 ![Accepter VPC](Screenshot/02-accepter-vpc.png)
 
----
 
 ---
 
@@ -84,9 +83,13 @@ Created one public subnet in each VPC to host the EC2 instances. These subnets p
 | Requester VPC | Public Subnet | Hosts the requester EC2 instance |
 | Accepter VPC | Public Subnet | Hosts the accepter EC2 instance |
 
-![Public Subnets](screenshots/03-public-subnets-requester.png)
+![Public Subnets](Screenshot/03-public-subnets-requester.png)
 
 Repeat these steps for accepter vpc public subnet as well with the cidr block 192.168.8.0/22
+
+---
+
+
 
 ## ✅ Result
 
