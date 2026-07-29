@@ -53,12 +53,6 @@ The implementation includes:
 ---
 
 
-## 📸 Screenshots
-
-Screenshots will be added here during the implementation.
-
----
-
 ## 🛠️ Implementation Steps
 
 ### Step 1: Create the Requester VPC
@@ -68,6 +62,31 @@ The first Virtual Private Cloud (VPC) was created as the **Requester VPC** with 
 ![Requester VPC](Screenshot/01-requester-vpc.png)
 
 ---
+
+### Step 2: Create the Accepter VPC
+
+Created the second Virtual Private Cloud (VPC) as the **Accepter VPC** with the CIDR block **192.168.0.0/16**. This VPC accepts the VPC Peering request and enables private communication with the Requester VPC.
+
+![Accepter VPC](Screenshot/02-accepter-vpc.png)
+
+---
+
+---
+
+### Step 3: Create Public Subnets on Both vpc
+
+Created one public subnet in each VPC to host the EC2 instances. These subnets provide network connectivity within their respective VPCs and are configured to support communication through the VPC Peering connection.
+
+**Subnet Details**
+
+| VPC | Subnet Type | Purpose |
+|-----|-------------|---------|
+| Requester VPC | Public Subnet | Hosts the requester EC2 instance |
+| Accepter VPC | Public Subnet | Hosts the accepter EC2 instance |
+
+![Public Subnets](screenshots/03-public-subnets-requester.png)
+
+Repeat these steps for accepter vpc public subnet as well with the cidr block 192.168.8.0/22
 
 ## ✅ Result
 
