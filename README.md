@@ -106,9 +106,11 @@ Created a dedicated Route Table for each VPC and associated it with the correspo
 
 **Requester Route Table**
 - Created a Route Table
-- Associated it with the Requester Public Subnet
 
 ![Requester Route Table](Screenshot/06-requester-route-table.png)
+
+- Associated it with the Requester Public Subnet
+- 
 ![Requester Route Table](Screenshot/06-edit-subnet-association.png)
 ![Requester Route Table](Screenshot/06-select-subnet-association.png)
 
