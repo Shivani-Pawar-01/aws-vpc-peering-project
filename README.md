@@ -98,6 +98,199 @@ Enabled **Auto-assign Public IPv4 Address** for the public subnets in both VPCs.
 ![Enable Auto-Assign Public IP](Screenshot/04-enable-auto-assign-public-ip.png)
 ![Enable Auto-Assign Public IP](Screenshot/05-enable-auto-assign-public-ip.png)
 
-## ✅ Result
+---
 
-Successfully established communication between EC2 instances deployed in different VPCs using AWS VPC Peering.
+### Step 5: Create Route Tables
+
+Created a dedicated Route Table for each VPC and associated it with the corresponding public subnet. Route tables determine how network traffic is directed within the VPC.
+
+**Requester Route Table**
+- Created a Route Table
+- Associated it with the Requester Public Subnet
+
+![Requester Route Table](Screenshot/06-requester-route-table.png)
+
+**Accepter Route Table**
+- Created another Route Table
+- Associated it with the Accepter Public Subnet
+
+![Accepter Route Table](Screenshot/07-accepter-route-table.png)
+
+---
+
+### Step 6: Create and Attach Internet Gateways
+
+Created an Internet Gateway (IGW) for each VPC and attached it to the respective VPC. Internet Gateways enable communication between resources in the VPC and the internet.
+
+**Requester Internet Gateway**
+
+- Created an Internet Gateway
+- Attached it to the Requester VPC
+
+![Requester Internet Gateway](Screenshot/08-requester-igw.png)
+
+Updated the Requester Route Table by adding the following route:
+
+| Destination | Target |
+|-------------|--------|
+| 0.0.0.0/0 | Internet Gateway |
+
+![Requester Route](Screenshot/09-requester-route.png)
+
+**Accepter Internet Gateway**
+
+- Created another Internet Gateway
+- Attached it to the Accepter VPC
+
+![Accepter Internet Gateway](Screenshot/10-accepter-igw.png)
+
+Updated the Accepter Route Table by adding the following route:
+
+| Destination | Target |
+|-------------|--------|
+| 0.0.0.0/0 | Internet Gateway |
+
+![Accepter Route](Screenshot/11-accepter-route.png)
+
+---
+
+### Step 7: Create the VPC Peering Connection
+
+Created a VPC Peering Connection to establish private communication between the Requester and Accepter VPCs.
+
+Configuration:
+
+- Requester VPC
+- Accepter VPC
+- Same AWS Account
+- Same AWS Region
+
+![Create Peering Connection](Screenshot/12-create-peering.png)
+
+After creating the peering request, accepted the request from the Accepter VPC.
+
+![Accept Peering Request](Screenshot/13-accept-peering.png)
+
+Once accepted, the VPC Peering Connection status changed to **Active**.
+
+![Peering Active](Screenshot/14-peering-active.png)
+
+---
+
+### Step 8: Update Route Tables for VPC Peering
+
+To allow communication between both VPCs, updated the Route Tables by adding routes that point to the VPC Peering Connection.
+
+**Requester Route Table**
+
+| Destination | Target |
+|-------------|--------|
+| 192.168.0.0/16 | VPC Peering Connection |
+
+![Requester Peering Route](Screenshot/15-requester-peering-route.png)
+
+**Accepter Route Table**
+
+| Destination | Target |
+|-------------|--------|
+| 10.0.0.0/16 | VPC Peering Connection |
+
+![Accepter Peering Route](Screenshot/16-accepter-peering-route.png)
+
+---
+
+### Step 9: Launch EC2 Instances
+
+Launched one EC2 instance in the Requester Public Subnet and another EC2 instance in the Accepter Public Subnet.
+
+Both instances were configured with:
+
+- Ubuntu
+- Public IP Enabled
+- Security Group allowing SSH (22)
+- Security Group allowing ICMP (Ping)
+
+**Requester EC2 Instance**
+
+![Requester EC2](Screenshot/17-requester-ec2.png)
+
+**Accepter EC2 Instance**
+
+![Accepter EC2](Screenshot/18-accepter-ec2.png)
+
+---
+
+### Step 10: Verify VPC Peering Connectivity
+
+Connected to both EC2 instances using SSH.
+
+Verified connectivity by pinging the private IP address of each instance from the other instance.
+
+From the **Requester EC2**
+
+```bash
+ping <Accepter-Private-IP>
+```
+
+Example:
+
+```bash
+ping 192.168.8.25
+```
+
+![Requester Ping](Screenshot/19-requester-ping.png)
+
+From the **Accepter EC2**
+
+```bash
+ping <Requester-Private-IP>
+```
+
+Example:
+
+```bash
+ping 10.0.1.84
+```
+
+![Accepter Ping](Screenshot/20-accepter-ping.png)
+
+Successful ping responses confirmed that the VPC Peering Connection was configured correctly and private communication between both VPCs was established.
+
+---
+
+## 🎯 Learning Outcomes
+
+Through this project, I gained hands-on experience with:
+
+- Amazon VPC Networking
+- CIDR Block Planning
+- Public Subnets
+- Route Tables
+- Internet Gateway (IGW)
+- Security Groups
+- EC2 Networking
+- VPC Peering
+- Private IP Communication
+- AWS Networking Fundamentals
+
+---
+
+## ✅ Project Outcome
+
+Successfully created two isolated Amazon VPCs and established secure private communication between them using AWS VPC Peering. Configured subnets, route tables, internet gateways, and EC2 instances, then verified connectivity using private IP addresses through ICMP (ping). This project demonstrates a practical understanding of AWS networking concepts and inter-VPC communication.
+
+---
+
+## 👩‍💻 Author
+
+**Shivani Pawar**
+
+**DevOps Engineer | AWS | Docker | Kubernetes | Terraform | Jenkins | Linux**
+
+- GitHub: https://github.com/Shivani-Pawar-01
+- LinkedIn: https://www.linkedin.com/in/shivani-pawar123
+
+---
+
+⭐ **If you found this project helpful, consider giving it a Star!**
+
