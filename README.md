@@ -109,10 +109,12 @@ Created a dedicated Route Table for each VPC and associated it with the correspo
 - Associated it with the Requester Public Subnet
 
 ![Requester Route Table](Screenshot/06-requester-route-table.png)
+![Requester Route Table](Screenshot/06-edit-subnet-association.png)
+![Requester Route Table](Screenshot/06-select-subnet-association.png)
 
 **Accepter Route Table**
 - Created another Route Table
-- Associated it with the Accepter Public Subnet
+- Associated it with the Accepter Public Subnet (Repeat steps same as requester for subnet association)
 
 ![Accepter Route Table](Screenshot/07-accepter-route-table.png)
 
@@ -125,9 +127,14 @@ Created an Internet Gateway (IGW) for each VPC and attached it to the respective
 **Requester Internet Gateway**
 
 - Created an Internet Gateway
-- Attached it to the Requester VPC
 
 ![Requester Internet Gateway](Screenshot/08-requester-igw.png)
+
+- Attached it to the Requester VPC
+
+![Requester Internet Gateway](Screenshot/08-select-requester-vpc.png)
+![Requester Internet Gateway](Screenshot/08-attach-requester-vpc.png)
+
 
 Updated the Requester Route Table by adding the following route:
 
@@ -136,21 +143,19 @@ Updated the Requester Route Table by adding the following route:
 | 0.0.0.0/0 | Internet Gateway |
 
 ![Requester Route](Screenshot/09-requester-route.png)
+![Requester Route](Screenshot/09-update-requester-route.png)
 
-**Accepter Internet Gateway**
+
+**Accepter Internet Gateway** (follow same steps from requester igw)
 
 - Created another Internet Gateway
 - Attached it to the Accepter VPC
-
-![Accepter Internet Gateway](Screenshot/10-accepter-igw.png)
 
 Updated the Accepter Route Table by adding the following route:
 
 | Destination | Target |
 |-------------|--------|
 | 0.0.0.0/0 | Internet Gateway |
-
-![Accepter Route](Screenshot/11-accepter-route.png)
 
 ---
 
