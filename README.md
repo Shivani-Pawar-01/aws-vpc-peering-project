@@ -322,7 +322,7 @@ Successfully created two isolated Amazon VPCs and established secure private com
 **DevOps Engineer | AWS | Docker | Kubernetes | Terraform | Jenkins | Linux**
 
 - GitHub: https://github.com/Shivani-Pawar-01
-- LinkedIn: https://www.linkedin.com/in/shivani-pawar123
+- LinkedIn: https://www.linkedin.com/in/shivani-pawar01
 
 ---
 
