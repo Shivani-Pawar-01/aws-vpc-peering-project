@@ -110,7 +110,7 @@ Created a dedicated Route Table for each VPC and associated it with the correspo
 ![Requester Route Table](Screenshot/06-requester-route-table.png)
 
 - Associated it with the Requester Public Subnet
-- 
+
 ![Requester Route Table](Screenshot/06-edit-subnet-association.png)
 ![Requester Route Table](Screenshot/06-select-subnet-association.png)
 
@@ -172,15 +172,18 @@ Configuration:
 - Same AWS Account
 - Same AWS Region
 
-![Create Peering Connection](Screenshot/12-create-peering.png)
+![Create Peering Connection](Screenshot/10-create-peering.png)
 
-After creating the peering request, accepted the request from the Accepter VPC.
+![Create Peering Connection](Screenshot/10-requester-vpc.png)
 
-![Accept Peering Request](Screenshot/13-accept-peering.png)
+![Create Peering Connection](Screenshot/10-accepter-vpc.png)
+
+![Create Peering Connection](Screenshot/10-config-vpc.png)
+
+
+After creating the peering request, Then select peering and click on actions and accepted the request from the Accepter VPC.
 
 Once accepted, the VPC Peering Connection status changed to **Active**.
-
-![Peering Active](Screenshot/14-peering-active.png)
 
 ---
 
@@ -194,7 +197,6 @@ To allow communication between both VPCs, updated the Route Tables by adding rou
 |-------------|--------|
 | 192.168.0.0/16 | VPC Peering Connection |
 
-![Requester Peering Route](Screenshot/15-requester-peering-route.png)
 
 **Accepter Route Table**
 
@@ -202,7 +204,6 @@ To allow communication between both VPCs, updated the Route Tables by adding rou
 |-------------|--------|
 | 10.0.0.0/16 | VPC Peering Connection |
 
-![Accepter Peering Route](Screenshot/16-accepter-peering-route.png)
 
 ---
 
@@ -219,11 +220,8 @@ Both instances were configured with:
 
 **Requester EC2 Instance**
 
-![Requester EC2](Screenshot/17-requester-ec2.png)
-
 **Accepter EC2 Instance**
 
-![Accepter EC2](Screenshot/18-accepter-ec2.png)
 
 ---
 
@@ -245,7 +243,7 @@ Example:
 ping 192.168.8.25
 ```
 
-![Requester Ping](Screenshot/19-requester-ping.png)
+![Requester Ping](Screenshot/11-requester-ping.png)
 
 From the **Accepter EC2**
 
@@ -258,8 +256,6 @@ Example:
 ```bash
 ping 10.0.1.84
 ```
-
-![Accepter Ping](Screenshot/20-accepter-ping.png)
 
 Successful ping responses confirmed that the VPC Peering Connection was configured correctly and private communication between both VPCs was established.
 
