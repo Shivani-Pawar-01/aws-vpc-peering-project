@@ -52,37 +52,6 @@ The implementation includes:
       EC2 Instance  ◄────VPC Peering────► EC2 Instance
 ---
 
-## 📂 Project Structure
-
-```
-AWS-VPC-Peering/
-│
-├── README.md
-│
-└── Screenshot/
-    ├── 01-requester-vpc.png
-    ├── 02-accepter-vpc.png
-    ├── 03-public-subnets-requester.png
-    ├── 04-enable-auto-assign-public-ip.png
-    ├── 05-enable-auto-assign-public-ip.png
-    ├── 06-requester-route-table.png
-    ├── 07-accepter-route-table.png
-    ├── 08-requester-igw.png
-    ├── 09-requester-route.png
-    ├── 10-accepter-igw.png
-    ├── 11-accepter-route.png
-    ├── 12-create-peering.png
-    ├── 13-accept-peering.png
-    ├── 14-peering-active.png
-    ├── 15-requester-peering-route.png
-    ├── 16-accepter-peering-route.png
-    ├── 17-requester-ec2.png
-    ├── 18-accepter-ec2.png
-    ├── 19-requester-ping.png
-    └── 20-accepter-ping.png
-```
----
-
 
 ## 🛠️ Implementation Steps
 
