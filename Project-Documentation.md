@@ -1,6 +1,4 @@
-
-
-## 🛠️ Implementation Steps
+## 🛠️ Project Implementation Steps
 
 ### Step 1: Create the Requester VPC
 
@@ -204,4 +202,5 @@ Example:
 ping 10.0.1.84
 ```
 
-Successful ping responses confirmed that the VPC Peering Connection was configured correctly and private communication between both VPCs was established.
+#Successful 
+ping responses confirmed that the VPC Peering Connection was configured correctly and private communication between both VPCs was established.
