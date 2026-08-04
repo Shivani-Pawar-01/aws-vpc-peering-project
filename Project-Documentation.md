@@ -202,5 +202,5 @@ Example:
 ping 10.0.1.84
 ```
 
-#Successful 
+# Successful 
 ping responses confirmed that the VPC Peering Connection was configured correctly and private communication between both VPCs was established.
